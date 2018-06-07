@@ -2,25 +2,10 @@ import java.util.*;
 
 public class Palindrome {
     public void primFac(long x){
-        long[] l1;
-        while (x % 2 == 0){
-            //System.out.print(2);
-            //l1.add(2);
-            x = x / 2;
-        }
-        for(int i = 3; i<= Math.sqrt(x); i = i+2){
-            while (x % i == 0){
-                //System.out.print(i);
-                //l1.add(i);
-                x = x / i;
-            }
-        }
-        if(x > 2){
-            //System.out.print(x); //Add to list
-            //l1.add(x);
-        }
-        //int max = Collections.max(l1);
-        //System.out.println(max);
+        //this entire solution need a different approach
+		//from the problem I know that I need sollowing components
+		//function to find factors especially prime factors
+		//find the prime factor of big number 600851475143
     }
     public void isPalindrome(String n){
         String original, reverse = "";
