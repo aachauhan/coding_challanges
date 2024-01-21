@@ -1,18 +1,41 @@
 <?php
-/*Largest Palindrome Product Problem 4 - Project Euler
-*A palindromic number reads the same both ways.
-*The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-*Find the largest palindrome made from the product of two 3-digit numbers.
+/*
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? 
 */
-function isPalindrome($number){
-    $revNum = strrev((string) ($number));
-    if($number == $revNum){
-        printf("True %d", $number);
+
+// Need to create a function that tells if a given number is evenly divisible by all numbers from 1 to 20
+// Start feeding this function numbers starting from 2520 and when we find the smallest positive number
+// that fulfills this is our answer.
+// we do know every positive integar is divisible by 1
+
+$time_start = microtime(true);
+
+function mainComputation($number){
+  $count = 0;
+  for($i = 1; $i< 21; $i++){
+    if($number % $i == 0){
+      // print $number . " is " . $i . "\n";
+      $count++;
     }
     else{
-        printf("False %d", $number);
+      // print $number . " not " . $i . "\n";
+      continue;
     }
+  }
+
+  return $count;
+
 }
-isPalindrome(1001);
+
+for ($j = 2520; $j < 240000000; $j++){
+  if(mainComputation($j) == 20){
+    print ($j);
+  }
+}
+$time_end = microtime(true);
+
+print " Execution time " . ($time_end - $time_start) . " seconds."
+
 
 ?>
